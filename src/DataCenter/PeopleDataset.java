@@ -16,37 +16,20 @@ public class PeopleDataset
 	ArrayList<PersonData> users=new ArrayList<PersonData>();
 	boolean errorDuringLoad=false;
 
-	public PeopleDataset(File folder)
-	{
-//		if (folder != null) {
-//			System.out.print(folder.getName());
-//			if (folder.isDirectory()) {
-//				System.out.print("YES");
-//			} else {
-//				System.out.print("NO");
-//			}
-//		}
-		
-		
-		if(folder.isDirectory())
-		{
-			try
-			{
-				File people[]=folder.listFiles();
-				for(File p:people)
-				{
-					if(p != null) {
+	public PeopleDataset(File folder) {
+		if(folder.isDirectory()) {
+			try {
+				File [] people=folder.listFiles();
+				assert people != null : "No people in dataset folder";
+
+				for(File p:people) {
+					if(p != null)
 						System.out.println(p.getName());
-					}
 					add(p);
 				}
+
 			}
-			catch(Exception e)
-			{
-				e.printStackTrace();
-				//GraphicRecognizer.showErrorInStepSegmentation();
-				return;
-			}
+			catch(Exception e) { e.printStackTrace(); }
 		}
 		else
 		{
@@ -57,32 +40,21 @@ public class PeopleDataset
 		
 	}
 
-	public PeopleDataset()
-	{
-
+	public PeopleDataset() {
 	}
 
-	public PeopleDataset(ArrayList<PersonData> dataset)
-	{
-		users=dataset;
-	}
+	public PeopleDataset(ArrayList<PersonData> dataset) { users=dataset; }
 
-	public void add(PersonData pd)
-	{
-		users.add(pd);
-	}
+	public void add(PersonData pd) { users.add(pd); }
 
-	public void add(File filename)
-	{
+	public void add(File filename) {
 		PersonData p=new PersonData(filename);
-		if(!p.errorDuringLoad)
-			users.add(p);
-		else
-			errorDuringLoad=true;
+		if(!p.errorDuringLoad) users.add(p);
+		else errorDuringLoad=true;
 	}
 
-	public String toString()
-	{
+	@Override
+	public String toString() {
 		String dataset="";
 		for(PersonData pd:users)
 			dataset+=pd;
@@ -113,11 +85,14 @@ public class PeopleDataset
 				System.out.println("getArrayDoubleInterpolationZ " + personWalk.getArrayDoubleInterpolationZ());
 				System.out.println("steps " + personWalk.getSteps().size());
 				for (Step step:personWalk.getSteps()) {
-					//dt = 1, future = 0
 					
 					step.setArrayDoubleInterpolationX(Algorithm.linearInterpolation(step.getTime(), step.getX(), 1, null));
 					step.setArrayDoubleInterpolationY(Algorithm.linearInterpolation(step.getTime(), step.getY(), 1, null));
 					step.setArrayDoubleInterpolationZ(Algorithm.linearInterpolation(step.getTime(), step.getZ(), 1, null));
+
+					// @Author maru_feb -> Gli array seguenti vengono dichiarati ma mai utilizzati
+					// quindi immagino che vadano sostituiti ai precedenti successivamente
+
 					ArrayList<Double> arrayDoubleX = Algorithm.interpolatedNoiseRemoval(step.getTime(), step.getX(), 1, 0);
 					ArrayList<Double> arrayDoubleY = Algorithm.interpolatedNoiseRemoval(step.getTime(), step.getY(), 1, 0);
 					ArrayList<Double> arrayDoubleZ = Algorithm.interpolatedNoiseRemoval(step.getTime(), step.getZ(), 1, 0);
@@ -128,9 +103,9 @@ public class PeopleDataset
 		System.out.println("people in dataset: " + peopleDataset.getUsers().size());
 
 		
-		for (PersonData personData:peopleDataset.getUsers()) {
-			int allStepsLength = 0;
-			int totalSteps = 0;
+		for (PersonData personData : peopleDataset.getUsers()) {
+			int allStepsLength = 0, totalSteps = 0;
+
 			for (PersonWalk walk : personData.getPersonWalks()) {
 				totalSteps += walk.getSteps().size();
 				
