@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/flanagan.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/commons-io-2.7/commons-io-2.7-test-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/commons-io-2.7/commons-io-2.7-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/commons-io-2.7/commons-io-2.7-tests.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/commons-io-2.7/commons-io-2.7-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/commons-io-2.7/commons-io-2.7.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/commons-math3-3.6.1/commons-math3-3.6.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/commons-math3-3.6.1/commons-math3-3.6.1.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/commons-math3-3.6.1/commons-math3-3.6.1-tools.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/commons-math3-3.6.1/commons-math3-3.6.1-tests.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/commons-math3-3.6.1/commons-math3-3.6.1-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/commons-math3-3.6.1/commons-math3-3.6.1-test-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/bus-opencv-6.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/jar_files/javacpp-1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/jar_files/opencv-3.0.0-1.1-linux-x86_64.jar"/>
+	<classpathentry kind="lib" path="/Users/federicodiveroli/Downloads/jar_files/opencv-3.0.0-1.1.jar"/>
+	<classpathentry kind="lib" path="/Volumes/ELEMENTS/Elements/Work/Private/Avigail/flanagan.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
